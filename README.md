@@ -1,5 +1,8 @@
 ### Console bit.ly client
 
+Script can shorten the link via bit.ly service
+and also provides clicks statistic for bit.link
+
 **installation:**
 
 ```
