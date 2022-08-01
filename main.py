@@ -5,7 +5,7 @@ from urllib.parse import urlparse
 import requests
 
 TOKEN = os.getenv('BITLY_TOKEN')
-logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.INFO)
 
 def shorten_link(url, token):
     headers = {'Authorization': f'Bearer {token}'}
