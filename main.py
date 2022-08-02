@@ -1,9 +1,11 @@
 import logging
 import os
 from urllib.parse import urlparse
+from dotenv import load_dotenv
 
 import requests
 
+load_dotenv()
 logging.basicConfig(level=logging.INFO)
 
 def shorten_link(url, token):
@@ -22,7 +24,6 @@ def get_clicks(url, token):
                             headers=headers)
     response.raise_for_status()
     return response.json().get("total_clicks")
-
 
 
 def is_bitlink(url, token):

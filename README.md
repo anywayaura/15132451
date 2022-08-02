@@ -11,7 +11,7 @@ pip install -r requirements.txt
 
 **setup:**
 
-u need to add `TOKEN` to main.py
+u need to add `TOKEN` to env variables
 
 **usage:**
 
