@@ -2,6 +2,7 @@ import logging
 import os
 from urllib.parse import urlparse
 from dotenv import load_dotenv
+import argparse
 
 import requests
 
@@ -34,10 +35,14 @@ def is_bitlink(url, token):
     return response.ok
 
 
+
+
 def main():
     load_dotenv()
     token = os.getenv('BITLY_TOKEN')
-    url = input('Please Enter the link: ')
+    parser = argparse.ArgumentParser(description='Script creates short bitlinks for long urls, and gets clicks on existing bitlinks')
+    parser.add_argument('url', help='long url or bitlink')
+    url = parser.parse_args().url
     if urlparse(url).netloc:
         try:
             if is_bitlink(url, token):
