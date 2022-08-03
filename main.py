@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 import requests
 
-load_dotenv()
+
 logging.basicConfig(level=logging.INFO)
 
 def shorten_link(url, token):
@@ -35,6 +35,7 @@ def is_bitlink(url, token):
 
 
 def main():
+    load_dotenv()
     token = os.getenv('BITLY_TOKEN')
     url = input('Please Enter the link: ')
     if urlparse(url).netloc:
